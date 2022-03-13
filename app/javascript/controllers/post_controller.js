@@ -21,6 +21,10 @@ export default class extends ApplicationController {
     // add your code here, if applicable
   }
 
+  preview() {
+    this.stimulate('Post#preview', { serializeForm: true })
+  }
+
   /* Reflex specific lifecycle methods.
    *
    * For every method defined in your Reflex class, a matching set of lifecycle methods become available

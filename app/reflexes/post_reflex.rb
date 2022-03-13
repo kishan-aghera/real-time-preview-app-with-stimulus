@@ -31,5 +31,14 @@ class PostReflex < ApplicationReflex
   #   end
   #
   # Learn more at: https://docs.stimulusreflex.com/reflexes#reflex-classes
+  def preview
+    morph '#preview-title', post_params[:title]
+    morph '#preview-body', post_params[:body]
+  end
 
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
 end
