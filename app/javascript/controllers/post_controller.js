@@ -1,4 +1,5 @@
 import ApplicationController from './application_controller'
+import debounce from 'lodash/debounce'
 
 /* This is the custom StimulusReflex controller for the Post Reflex.
  * Learn more at: https://docs.stimulusreflex.com
@@ -19,6 +20,7 @@ export default class extends ApplicationController {
   connect() {
     super.connect()
     // add your code here, if applicable
+    this.preview = debounce(this.preview.bind(this), 50)
   }
 
   preview() {
