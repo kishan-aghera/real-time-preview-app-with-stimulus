@@ -74,3 +74,5 @@ end
 gem "stimulus_reflex", "~> 3.4"
 
 gem "redcarpet", "~> 3.5"
+
+gem "liquid", "~> 5.2"

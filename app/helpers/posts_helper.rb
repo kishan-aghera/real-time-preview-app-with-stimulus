@@ -7,6 +7,12 @@ module PostsHelper
       fenced_code_blocks: true,
       autolink: true
     )
-    markdown.render(content).html_safe
+    markdown.render(liquified(content)).html_safe
+  end
+
+  def liquified(content)
+    Liquid::Template
+      .parse(content)
+      .render('company_name' => 'Hotwiring Rails')
   end
 end
