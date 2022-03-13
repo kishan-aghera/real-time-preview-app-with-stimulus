@@ -33,7 +33,7 @@ class PostReflex < ApplicationReflex
   # Learn more at: https://docs.stimulusreflex.com/reflexes#reflex-classes
   def preview
     morph '#preview-title', post_params[:title]
-    morph '#preview-body', post_params[:body]
+    morph '#preview-body', ApplicationController.helpers.to_markdown(post_params[:body])
   end
 
   private
